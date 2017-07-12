@@ -5,11 +5,10 @@ class Users::OmniauthCallbacksController < ApplicationController
     if @User.persisted?
       @User.remember_me = true
       sign_in_and_redirect @User, event: :authentication
+    else
+      session["devise.auth"] = request.env["omniauth.auth"]
+      render :edit
     end
-
-    session["devise.auth"] = request.env["omniauth.auth"]
-
-    render :edit
   end
 
   def custom_sign_up
