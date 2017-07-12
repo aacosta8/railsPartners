@@ -6,8 +6,8 @@ $colors : (
   dark-gray: #666,
   light-blue: #6DBCDB,
   white: #fff,
-  black: #000,
-  indigo: #2F33AC
+  indigo: #2F33AC,
+  black: #000
 );
 
 @each $color_name,$color in $colors{
